@@ -1,937 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>SEO AI Dashboard</title>
-
-<!-- FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- ICON -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-
-<style>
-
-/* =========================
-   GLOBAL
-========================= */
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Inter',sans-serif;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:#040816;
-  color:white;
-  overflow-x:hidden;
-}
-
-/* BACKGROUND */
-
-body::before{
-  content:'';
-  position:fixed;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-
-  background:
-  radial-gradient(circle at top left, rgba(124,58,237,.18), transparent 28%),
-  radial-gradient(circle at bottom right, rgba(59,130,246,.12), transparent 30%);
-
-  z-index:-1;
-}
-
-/* =========================
-   CONTAINER
-========================= */
-
-.container{
-  width:100%;
-  max-width:1400px;
-  margin:auto;
-  padding:20px;
-}
-
-/* =========================
-   TOPBAR
-========================= */
-
-.topbar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-}
-
-.menu-btn,
-.theme-btn{
-  width:58px;
-  height:58px;
-  border-radius:18px;
-
-  background:rgba(255,255,255,.03);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  font-size:24px;
-  cursor:pointer;
-
-  backdrop-filter:blur(10px);
-
-  box-shadow:0 0 30px rgba(0,0,0,.3);
-}
-
-.service-box{
-  flex:1;
-
-  height:58px;
-
-  border-radius:18px;
-
-  background:rgba(255,255,255,.03);
-
-  border:1px solid rgba(139,92,246,.2);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-
-  font-size:18px;
-  font-weight:500;
-
-  box-shadow:0 0 40px rgba(124,58,237,.15);
-
-  backdrop-filter:blur(12px);
-}
-
-.service-box i{
-  color:#8b5cf6;
-}
-
-.service-box span{
-  color:#a855f7;
-  font-weight:700;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-  margin-top:70px;
-
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-  align-items:center;
-}
-
-.hero h1{
-  font-size:74px;
-  line-height:1.05;
-  font-weight:800;
-  margin-bottom:30px;
-}
-
-.hero h1 span{
-  background:linear-gradient(90deg,#a855f7,#3b82f6);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.hero p{
-  color:#9ca3af;
-  font-size:24px;
-  line-height:1.7;
-  max-width:700px;
-}
-
-/* SEO BOX */
-
-.hero-image{
-  display:flex;
-  justify-content:center;
-}
-
-.seo-box{
-  width:100%;
-  max-width:500px;
-  height:360px;
-
-  border-radius:35px;
-
-  background:
-  linear-gradient(145deg,#0f172a,#050816);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  position:relative;
-  overflow:hidden;
-
-  box-shadow:
-  0 0 80px rgba(99,102,241,.25),
-  inset 0 0 80px rgba(139,92,246,.08);
-}
-
-.seo-box::before{
-  content:'SEO';
-
-  position:absolute;
-
-  top:50%;
-  left:50%;
-
-  transform:translate(-50%,-50%);
-
-  font-size:100px;
-  font-weight:800;
-
-  color:white;
-
-  letter-spacing:4px;
-}
-
-.seo-box::after{
-  content:'';
-
-  position:absolute;
-
-  width:250px;
-  height:250px;
-
-  background:rgba(139,92,246,.2);
-
-  border-radius:50%;
-
-  filter:blur(90px);
-
-  bottom:-40px;
-  right:-40px;
-}
-
-/* =========================
-   CARDS
-========================= */
-
-.cards{
-  margin-top:70px;
-
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:25px;
-}
-
-.card{
-  background:rgba(255,255,255,.03);
-
-  border:1px solid rgba(255,255,255,.06);
-
-  border-radius:32px;
-
-  padding:35px;
-
-  min-height:240px;
-
-  position:relative;
-
-  overflow:hidden;
-
-  transition:.4s;
-
-  box-shadow:0 0 40px rgba(0,0,0,.25);
-}
-
-.card:hover{
-  transform:translateY(-8px);
-
-  border-color:rgba(139,92,246,.4);
-
-  box-shadow:0 0 60px rgba(139,92,246,.2);
-}
-
-.card-icon{
-  width:82px;
-  height:82px;
-
-  border-radius:24px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  background:rgba(255,255,255,.03);
-
-  border:1px solid rgba(255,255,255,.06);
-
-  font-size:34px;
-
-  margin-bottom:28px;
-}
-
-.purple{color:#a855f7;}
-.blue{color:#3b82f6;}
-.yellow{color:#facc15;}
-.green{color:#4ade80;}
-
-.card h2{
-  font-size:40px;
-  margin-bottom:18px;
-}
-
-.card p{
-  color:#9ca3af;
-  font-size:20px;
-  line-height:1.7;
-  width:85%;
-}
-
-.arrow{
-  position:absolute;
-
-  right:30px;
-  bottom:30px;
-
-  width:65px;
-  height:65px;
-
-  border-radius:20px;
-
-  background:rgba(255,255,255,.03);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  font-size:24px;
-}
-
-/* =========================
-   DISCUSS SECTION
-========================= */
-
-.discuss-box{
-  margin-top:40px;
-
-  background:rgba(255,255,255,.03);
-
-  border:1px solid rgba(139,92,246,.18);
-
-  border-radius:35px;
-
-  padding:40px;
-
-  box-shadow:0 0 60px rgba(124,58,237,.12);
-}
-
-.discuss-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-}
-
-.discuss-left{
-  display:flex;
-  gap:22px;
-  align-items:center;
-}
-
-.idea-circle{
-  width:90px;
-  height:90px;
-
-  border-radius:50%;
-
-  background:rgba(139,92,246,.08);
-
-  border:1px solid rgba(139,92,246,.3);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  font-size:34px;
-
-  color:#a855f7;
-}
-
-.discuss-left h2{
-  font-size:42px;
-  margin-bottom:10px;
-}
-
-.discuss-left p{
-  color:#9ca3af;
-  font-size:19px;
-  line-height:1.6;
-}
-
-.ai-tag{
-  padding:14px 22px;
-
-  border-radius:16px;
-
-  background:rgba(139,92,246,.08);
-
-  border:1px solid rgba(139,92,246,.25);
-
-  color:#c084fc;
-
-  font-weight:600;
-
-  white-space:nowrap;
-}
-
-/* TEXTAREA */
-
-textarea{
-  width:100%;
-  height:230px;
-
-  margin-top:30px;
-
-  border-radius:25px;
-
-  background:#050816;
-
-  border:1px solid rgba(255,255,255,.08);
-
-  padding:24px;
-
-  color:white;
-
-  font-size:18px;
-
-  resize:none;
-
-  outline:none;
-}
-
-textarea::placeholder{
-  color:#6b7280;
-}
-
-/* FEATURES */
-
-.features{
-  margin-top:28px;
-
-  display:flex;
-  flex-wrap:wrap;
-  gap:15px;
-}
-
-.feature{
-  padding:15px 22px;
-
-  border-radius:16px;
-
-  background:rgba(255,255,255,.03);
-
-  border:1px solid rgba(255,255,255,.06);
-
-  color:#d1d5db;
-
-  font-size:17px;
-}
-
-/* BUTTONS */
-
-.buttons{
-  margin-top:35px;
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.clear-btn{
-  padding:18px 30px;
-
-  border:none;
-
-  border-radius:18px;
-
-  background:rgba(255,255,255,.04);
-
-  border:1px solid rgba(255,255,255,.06);
-
-  color:white;
-
-  font-size:17px;
-
-  cursor:pointer;
-}
-
-.right-buttons{
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
-}
-
-.ai-btn{
-  padding:18px 34px;
-
-  border:none;
-
-  border-radius:18px;
-
-  background:linear-gradient(90deg,#7c3aed,#4f46e5);
-
-  color:white;
-
-  font-size:18px;
-  font-weight:600;
-
-  cursor:pointer;
-
-  box-shadow:0 0 35px rgba(124,58,237,.3);
-}
-
-.discuss-btn{
-  padding:18px 30px;
-
-  border-radius:18px;
-
-  background:#0f172a;
-
-  border:1px solid rgba(255,255,255,.08);
-
-  color:white;
-
-  font-size:18px;
-
-  cursor:pointer;
-}
-
-/* =========================
-   ADS
-========================= */
-
-.ads{
-  margin-top:45px;
-
-  height:220px;
-
-  border-radius:35px;
-
-  border:2px dashed rgba(255,255,255,.1);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-
-  gap:12px;
-
-  color:#6b7280;
-
-  font-size:24px;
-}
-
-/* FOOTER */
-
-footer{
-  text-align:center;
-  padding:35px 0 15px;
-  color:#6b7280;
-  font-size:17px;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:1100px){
-
-  .hero{
-    grid-template-columns:1fr;
-    text-align:center;
-  }
-
-  .hero p{
-    margin:auto;
-  }
-
-  .cards{
-    grid-template-columns:1fr;
-  }
-
-}
-
-@media(max-width:768px){
-
-  .container{
-    padding:15px;
-  }
-
-  .topbar{
-    gap:10px;
-  }
-
-  .menu-btn,
-  .theme-btn{
-    width:50px;
-    height:50px;
-    font-size:20px;
-    border-radius:15px;
-  }
-
-  .service-box{
-    font-size:12px;
-    height:auto;
-    padding:12px;
-    text-align:center;
-  }
-
-  .hero{
-    margin-top:45px;
-    gap:30px;
-  }
-
-  .hero h1{
-    font-size:42px;
-  }
-
-  .hero p{
-    font-size:18px;
-  }
-
-  .seo-box{
-    height:240px;
-  }
-
-  .seo-box::before{
-    font-size:60px;
-  }
-
-  .card{
-    padding:25px;
-    min-height:auto;
-  }
-
-  .card h2{
-    font-size:28px;
-  }
-
-  .card p{
-    width:100%;
-    font-size:16px;
-  }
-
-  .card-icon{
-    width:65px;
-    height:65px;
-    font-size:25px;
-  }
-
-  .arrow{
-    width:52px;
-    height:52px;
-    font-size:18px;
-  }
-
-  .discuss-box{
-    padding:24px;
-  }
-
-  .discuss-top{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .discuss-left{
-    align-items:flex-start;
-  }
-
-  .idea-circle{
-    width:70px;
-    height:70px;
-    font-size:28px;
-  }
-
-  .discuss-left h2{
-    font-size:28px;
-  }
-
-  .discuss-left p{
-    font-size:15px;
-  }
-
-  .ai-tag{
-    width:100%;
-    text-align:center;
-  }
-
-  textarea{
-    height:180px;
-    font-size:16px;
-  }
-
-  .feature{
-    width:100%;
-    text-align:center;
-  }
-
-  .buttons{
-    flex-direction:column;
-  }
-
-  .right-buttons{
-    width:100%;
-    flex-direction:column;
-  }
-
-  .clear-btn,
-  .ai-btn,
-  .discuss-btn{
-    width:100%;
-  }
-
-  .ads{
-    height:160px;
-    font-size:20px;
-  }
-
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO Baba 2026 - 99.9% Full SEO Service</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0a0a0a; 
+      color: #e5e5e5; 
+      min-height: 100vh;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      border-bottom: 1px solid #1f1f1f;
+      background: #0a0a0a;
+    }
+    .nav-left { display: flex; align-items: center; gap: 8px; flex: 1; }
+    .menu-btn {
+      background: transparent;
+      border: 1px solid #2a2a2a;
+      color: #e5e5e5;
+      padding: 6px 8px;
+      border-radius: 8px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .logo { font-size: 12px; color: #9ca3af; line-height: 1.3; }
+    .logo span { color: #8b5cf6; font-weight: 600; }
+    .theme-btn {
+      background: transparent;
+      border: 1px solid #2a2a2a;
+      color: #e5e5e5;
+      padding: 6px 8px;
+      border-radius: 8px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    h1 span { color: #8b5cf6; }
+    .subtitle {
+      color: #9ca3af;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .card {
+      background: #111111;
+      border: 1px solid #1f1f1f;
+      padding: 16px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    .card:active { border-color: #8b5cf6; }
+    .card-icon {
+      width: 32px;
+      height: 32px;
+      background: #1a1a1a;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    .card h3 {
+      font-size: 14px;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+    .card p {
+      font-size: 12px;
+      color: #9ca3af;
+      line-height: 1.3;
+    }
+    .icon-purple { color: #a78bfa; }
+    .icon-blue { color: #60a5fa; }
+    .icon-green { color: #34d399; }
+    .icon-yellow { color: #fbbf24; }
+    .idea-section {
+      background: #111111;
+      border: 1px solid #1f1f1f;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+    .idea-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .idea-header h3 {
+      color: #8b5cf6;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .idea-section p {
+      color: #9ca3af;
+      font-size: 13px;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+    .idea-input {
+      width: 100%;
+      background: #0a0a0a;
+      border: 1px solid #1f1f1f;
+      color: #e5e5e5;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-bottom: 14px;
+      min-height: 80px;
+      resize: vertical;
+      font-family: inherit;
+    }
+    .idea-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+    .ai-btn {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      color: #e5e5e5;
+      padding: 9px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .discuss-btn {
+      background: #8b5cf6;
+      border: none;
+      color: white;
+      padding: 9px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .ads-box {
+      background: #111111;
+      border: 1px dashed #2a2a2a;
+      padding: 32px;
+      border-radius: 12px;
+      text-align: center;
+      color: #6b7280;
+      margin-bottom: 32px;
+    }
+    .ads-box i { font-size: 20px; margin-bottom: 6px; }
+    .footer {
+      text-align: center;
+      color: #6b7280;
+      font-size: 12px;
+      padding-bottom: 20px;
+    }
+  </style>
 </head>
-
 <body>
-
-<div class="container">
-
-<!-- TOPBAR -->
-
-<div class="topbar">
-
-  <div class="menu-btn">
-    <i class="fa-solid fa-bars"></i>
-  </div>
-
-  <div class="service-box">
-    <i class="fa-solid fa-wand-magic-sparkles"></i>
-    Wab provide to you <span>99.9 %</span> full SEO service
-  </div>
-
-  <div class="theme-btn">
-    <i class="fa-regular fa-sun"></i>
-  </div>
-
-</div>
-
-<!-- HERO -->
-
-<div class="hero">
-
-  <div>
-
-    <h1>
-      Create Powerful <br>
-      <span>SEO Optimized Content</span>
-    </h1>
-
-    <p>
-      Generate high ranking content for your videos,
-      blogs and social media using AI technology.
-    </p>
-
-  </div>
-
-  <div class="hero-image">
-
-    <div class="seo-box"></div>
-
-  </div>
-
-</div>
-
-<!-- CARDS -->
-
-<div class="cards">
-
-  <div class="card">
-
-    <div class="card-icon purple">
-      <i class="fa-regular fa-file-lines"></i>
+  <div class="navbar">
+    <div class="nav-left">
+      <button class="menu-btn"><i class="fas fa-bars"></i></button>
+      <div class="logo">Web provide to you <span>99.9% full SEO</span> service</div>
     </div>
-
-    <h2>Description</h2>
-
-    <p>
-      Get SEO friendly descriptions that rank better.
-    </p>
-
-    <div class="arrow purple">
-      <i class="fa-solid fa-arrow-right"></i>
-    </div>
-
+    <button class="theme-btn"><i class="fas fa-sun"></i></button>
   </div>
 
-  <div class="card">
+  <div class="container">
+    <h1>How can I help<br>you <span>today?</span></h1>
+    <p class="subtitle">Generate SEO optimized content for your videos, blogs & social media.</p>
 
-    <div class="card-icon blue">
-      <i class="fa-solid fa-t"></i>
-    </div>
-
-    <h2>Title</h2>
-
-    <p>
-      Generate catchy and SEO optimized titles.
-    </p>
-
-    <div class="arrow blue">
-      <i class="fa-solid fa-arrow-right"></i>
-    </div>
-
-  </div>
-
-  <div class="card">
-
-    <div class="card-icon yellow">
-      <i class="fa-solid fa-hashtag"></i>
-    </div>
-
-    <h2>Hashtags</h2>
-
-    <p>
-      Get trending and relevant hashtags instantly.
-    </p>
-
-    <div class="arrow yellow">
-      <i class="fa-solid fa-arrow-right"></i>
-    </div>
-
-  </div>
-
-  <div class="card">
-
-    <div class="card-icon green">
-      <i class="fa-regular fa-message"></i>
-    </div>
-
-    <h2>Caption</h2>
-
-    <p>
-      Create engaging captions for better reach.
-    </p>
-
-    <div class="arrow green">
-      <i class="fa-solid fa-arrow-right"></i>
-    </div>
-
-  </div>
-
-</div>
-
-<!-- DISCUSS -->
-
-<div class="discuss-box">
-
-  <div class="discuss-top">
-
-    <div class="discuss-left">
-
-      <div class="idea-circle">
-        <i class="fa-regular fa-lightbulb"></i>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-file-alt icon-purple"></i></div>
+        <h3>Description</h3>
+        <p>Get SEO friendly descriptions.</p>
       </div>
-
-      <div>
-
-        <h2>Discuss your idea</h2>
-
-        <p>
-          Share your idea and get AI insights,
-          suggestions and content structure.
-        </p>
-
+      
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-font icon-blue"></i></div>
+        <h3>Title</h3>
+        <p>Generate catchy & SEO optimized titles.</p>
       </div>
-
+      
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-hashtag icon-green"></i></div>
+        <h3>Hashtags</h3>
+        <p>Get trending & relevant hashtags.</p>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-comment-dots icon-yellow"></i></div>
+        <h3>Caption</h3>
+        <p>Create engaging captions.</p>
+      </div>
     </div>
 
-    <div class="ai-tag">
-      ✨ AI Powered
+    <div class="idea-section">
+      <div class="idea-header">
+        <div class="card-icon"><i class="fas fa-lightbulb icon-purple"></i></div>
+        <h3>Discuss your idea</h3>
+      </div>
+      <p>Share your idea and get AI insights, suggestions & content structure.</p>
+      <textarea class="idea-input" placeholder="Write your idea here..."></textarea>
+      <div class="idea-footer">
+        <button class="ai-btn"><i class="fas fa-wand-magic-sparkles"></i> AI Suggest</button>
+        <button class="discuss-btn">Discuss <i class="fas fa-paper-plane"></i></button>
+      </div>
     </div>
 
-  </div>
-
-  <textarea placeholder="Write your idea here..."></textarea>
-
-  <div class="features">
-
-    <div class="feature">📊 Content Structure</div>
-
-    <div class="feature">👥 Audience Insights</div>
-
-    <div class="feature">💡 Topic Ideas</div>
-
-    <div class="feature">🔍 SEO Suggestions</div>
-
-    <div class="feature">📈 Competitor Analysis</div>
-
-  </div>
-
-  <div class="buttons">
-
-    <button class="clear-btn">
-      🗑 Clear
-    </button>
-
-    <div class="right-buttons">
-
-      <button class="ai-btn">
-        Get AI Suggestions ✨
-      </button>
-
-      <button class="discuss-btn">
-        Discuss ✈
-      </button>
-
+    <div class="ads-box">
+      <i class="fas fa-bullhorn"></i>
+      <div>Ads Space</div>
+      <div style="font-size: 12px; margin-top: 4px;">Your ad here</div>
     </div>
 
+    <div class="footer">© 2026 All rights reserved.</div>
   </div>
-
-</div>
-
-<!-- ADS -->
-
-<div class="ads">
-
-  <i class="fa-solid fa-bullhorn"></i>
-
-  <div>Ads Space</div>
-
-  <small>Your ad here</small>
-
-</div>
-
-<footer>
-  © 2025 All rights reserved.
-</footer>
-
-</div>
 
 </body>
 </html>

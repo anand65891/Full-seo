@@ -17,84 +17,82 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 20px;
+      padding: 12px 16px;
       border-bottom: 1px solid #1f1f1f;
       background: #0a0a0a;
     }
-    .nav-left { display: flex; align-items: center; gap: 12px; }
+    .nav-left { display: flex; align-items: center; gap: 8px; flex: 1; }
     .menu-btn {
       background: transparent;
       border: 1px solid #2a2a2a;
       color: #e5e5e5;
-      padding: 8px 10px;
+      padding: 6px 8px;
       border-radius: 8px;
       cursor: pointer;
+      flex-shrink: 0;
     }
-    .logo { font-size: 14px; color: #9ca3af; }
+    .logo { font-size: 12px; color: #9ca3af; line-height: 1.3; }
     .logo span { color: #8b5cf6; font-weight: 600; }
     .theme-btn {
       background: transparent;
       border: 1px solid #2a2a2a;
       color: #e5e5e5;
-      padding: 8px 10px;
+      padding: 6px 8px;
       border-radius: 8px;
       cursor: pointer;
+      flex-shrink: 0;
     }
     .container {
       max-width: 800px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 24px 16px;
     }
     h1 {
-      font-size: 40px;
+      font-size: 32px;
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       line-height: 1.2;
     }
     h1 span { color: #8b5cf6; }
     .subtitle {
       color: #9ca3af;
-      font-size: 16px;
-      margin-bottom: 40px;
+      font-size: 14px;
+      margin-bottom: 24px;
     }
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+      gap: 12px;
       margin-bottom: 20px;
     }
     .card {
       background: #111111;
       border: 1px solid #1f1f1f;
-      padding: 20px;
+      padding: 16px;
       border-radius: 12px;
       cursor: pointer;
-      transition: all 0.2s;
     }
-    .card:hover {
-      border-color: #8b5cf6;
-      background: #1a1a1a;
-    }
+    .card:active { border-color: #8b5cf6; }
     .card-icon {
-      width: 40px;
-      height: 40px;
+      width: 32px;
+      height: 32px;
       background: #1a1a1a;
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 12px;
-      font-size: 18px;
+      margin-bottom: 10px;
+      font-size: 16px;
     }
     .card h3 {
-      font-size: 16px;
-      margin-bottom: 6px;
+      font-size: 14px;
+      margin-bottom: 4px;
       font-weight: 600;
     }
     .card p {
-      font-size: 14px;
+      font-size: 12px;
       color: #9ca3af;
-      line-height: 1.4;
+      line-height: 1.3;
     }
     .icon-purple { color: #a78bfa; }
     .icon-blue { color: #60a5fa; }
@@ -103,37 +101,37 @@
     .idea-section {
       background: #111111;
       border: 1px solid #1f1f1f;
-      padding: 24px;
+      padding: 20px;
       border-radius: 12px;
       margin-bottom: 20px;
     }
     .idea-header {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
+      gap: 10px;
+      margin-bottom: 10px;
     }
     .idea-header h3 {
       color: #8b5cf6;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 600;
     }
     .idea-section p {
       color: #9ca3af;
-      font-size: 14px;
-      margin-bottom: 16px;
-      line-height: 1.5;
+      font-size: 13px;
+      margin-bottom: 14px;
+      line-height: 1.4;
     }
     .idea-input {
       width: 100%;
       background: #0a0a0a;
       border: 1px solid #1f1f1f;
       color: #e5e5e5;
-      padding: 16px;
+      padding: 14px;
       border-radius: 8px;
       font-size: 14px;
-      margin-bottom: 16px;
-      min-height: 100px;
+      margin-bottom: 14px;
+      min-height: 80px;
       resize: vertical;
       font-family: inherit;
     }
@@ -141,51 +139,48 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 10px;
     }
     .ai-btn {
       background: #1a1a1a;
       border: 1px solid #2a2a2a;
       color: #e5e5e5;
-      padding: 10px 16px;
+      padding: 9px 12px;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 13px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
     .discuss-btn {
       background: #8b5cf6;
       border: none;
       color: white;
-      padding: 10px 20px;
+      padding: 9px 16px;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
     .ads-box {
       background: #111111;
       border: 1px dashed #2a2a2a;
-      padding: 40px;
+      padding: 32px;
       border-radius: 12px;
       text-align: center;
       color: #6b7280;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
     }
-    .ads-box i { font-size: 24px; margin-bottom: 8px; }
+    .ads-box i { font-size: 20px; margin-bottom: 6px; }
     .footer {
       text-align: center;
       color: #6b7280;
-      font-size: 13px;
+      font-size: 12px;
       padding-bottom: 20px;
-    }
-    @media (max-width: 640px) {
-      .grid { grid-template-columns: 1fr; }
-      h1 { font-size: 32px; }
     }
   </style>
 </head>
@@ -236,7 +231,7 @@
       <p>Share your idea and get AI insights, suggestions & content structure.</p>
       <textarea class="idea-input" placeholder="Write your idea here..."></textarea>
       <div class="idea-footer">
-        <button class="ai-btn"><i class="fas fa-wand-magic-sparkles"></i> Get AI Suggestions</button>
+        <button class="ai-btn"><i class="fas fa-wand-magic-sparkles"></i> AI Suggest</button>
         <button class="discuss-btn">Discuss <i class="fas fa-paper-plane"></i></button>
       </div>
     </div>
@@ -244,7 +239,7 @@
     <div class="ads-box">
       <i class="fas fa-bullhorn"></i>
       <div>Ads Space</div>
-      <div style="font-size: 13px; margin-top: 4px;">Your ad here</div>
+      <div style="font-size: 12px; margin-top: 4px;">Your ad here</div>
     </div>
 
     <div class="footer">© 2026 All rights reserved.</div>

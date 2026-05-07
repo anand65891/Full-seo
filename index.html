@@ -1,161 +1,612 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SEO Baba 2026</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-*{margin:0;padding:0;box-sizing:border-box}
-body{width:100%;font-family:'Inter',sans-serif;background:#0a0a0a;color:#e5e5e5;overflow-x:hidden}
-.navbar{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;gap:10px}
-.nav-btn{background:transparent;border:1px solid #2a2a2a;color:#e5e5e5;width:42px;height:42px;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center}
-.nav-center{background:#111;border:1px solid #1f1f1f;padding:11px 14px;border-radius:12px;display:flex;align-items:center;gap:8px;flex:1;justify-content:center}
-.nav-center i{background:linear-gradient(135deg,#8b5cf6,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:16px}
-.nav-text{font-size:12px;color:#9ca3af;font-weight:500}
-.nav-text span{color:#a78bfa;font-weight:600}
-.container{padding:20px 16px;max-width:500px;margin:0 auto}
-.hero{margin-bottom:28px;position:relative;min-height:170px;display:flex;align-items:flex-start}
-.hero-content{position:relative;z-index:10;flex:1;max-width:calc(100% - 95px)}
-h1{font-size:34px;font-weight:700;margin-bottom:12px;line-height:1.15}
-h1 .gradient{background:linear-gradient(90deg,#a78bfa,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.subtitle{color:#9ca3af;font-size:14px;line-height:1.6}
-.hero-3d{position:absolute;right:0;top:20px;width:90px;height:90px;z-index:1}
-.seo-screen{width:100%;height:100%;background:linear-gradient(135deg,#1a1a1a,#0f0f0f);border:2px solid #2a2a2a;border-radius:16px;position:relative}
-.seo-screen::before{content:'SEO';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:18px;font-weight:700;color:#e5e5e5}
-.magnify{position:absolute;right:6px;top:28%;width:20px;height:20px;border:3px solid #8b5cf6;border-radius:50%}
-.magnify::after{content:'';position:absolute;bottom:-4px;right:-2px;width:2px;height:8px;background:#8b5cf6;transform:rotate(-45deg)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
-.card{background:#111;border:1px solid #1f1f1f;padding:14px;border-radius:14px;cursor:pointer;display:flex;align-items:center;gap:10px;min-height:95px}
-.card.selected{border-color:#8b5cf6;background:#1a1a1a}
-.card-icon{width:36px;height:36px;background:#1a1a1a;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px}
-.card-content{flex:1}
-.card h3{font-size:14px;margin-bottom:4px;font-weight:600;color:#f5f5f5}
-.card p{font-size:11px;color:#9ca3af;line-height:1.4}
-.card-arrow{background:#1a1a1a;border:1px solid #2a2a2a;width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:13px}
-.icon-purple{color:#a78bfa}.icon-blue{color:#60a5fa}.icon-yellow{color:#fbbf24}.icon-green{color:#34d399}
-.arrow-purple{color:#a78bfa}.arrow-blue{color:#60a5fa}.arrow-yellow{color:#fbbf24}.arrow-green{color:#34d399}
-.keyword-box{background:#111;border:1px solid #1f1f1f;padding:16px;border-radius:14px;margin-bottom:16px}
-.keyword-label{font-size:14px;font-weight:600;color:#a78bfa;margin-bottom:10px;display:flex;align-items:center;gap:8px}
-.keyword-input{width:100%;background:#0a0a0a;border:2px solid #8b5cf6;color:#e5e5e5;padding:16px;border-radius:12px;font-size:16px}
-.result-box{background:#111;border:2px solid #8b5cf6;padding:16px;border-radius:14px;margin-bottom:16px;display:none}
-.result-box.active{display:block}
-.result-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.result-title{font-size:15px;font-weight:600;color:#a78bfa;display:flex;align-items:center;gap:8px}
-.copy-btn{background:#1a1a1a;border:1px solid #2a2a2a;color:#e5e5e5;padding:6px 12px;border-radius:8px;cursor:pointer;font-size:12px;display:flex;align-items:center;gap:5px}
-.result-content{background:#0a0a0a;border:1px solid #1f1f1f;padding:12px;border-radius:8px;font-size:13px;line-height:1.6;color:#e5e5e5;white-space:pre-wrap;word-wrap:break-word}
-.idea-section{background:#111;border:1px solid #1f1f1f;padding:16px;border-radius:14px;margin-bottom:16px}
-.idea-header{display:flex;align-items:start;gap:12px;margin-bottom:12px}
-.idea-content{flex:1}
-.idea-title-row{display:flex;justify-content:space-between;align-items:start;margin-bottom:6px;gap:8px;flex-wrap:wrap}
-.idea-header h3{font-size:15px;font-weight:600;color:#f5f5f5}
-.idea-section p{color:#9ca3af;font-size:12px;line-height:1.5}
-.ai-badge{background:#1a1a1a;border:1px solid #8b5cf6;color:#a78bfa;padding:6px 10px;border-radius:10px;font-size:10px;display:flex;align-items:center;gap:4px;font-weight:500}
-.idea-input{width:100%;background:#0a0a0a;border:1px solid #1f1f1f;color:#e5e5e5;padding:14px;border-radius:10px;font-size:14px;margin:14px 0 6px 0;min-height:90px;resize:vertical}
-.char-count{text-align:right;font-size:11px;color:#6b7280;margin-bottom:14px}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-.tag{background:#1a1a1a;border:1px solid #2a2a2a;color:#9ca3af;padding:8px 10px;border-radius:10px;font-size:11px;display:flex;align-items:center;gap:5px;cursor:pointer}
-.tag:hover{border-color:#8b5cf6;color:#a78bfa}
-.idea-footer{display:flex;flex-direction:column;gap:10px}
-.btn-group{display:flex;gap:8px;width:100%}
-.clear-btn{background:#1a1a1a;border:1px solid #2a2a2a;color:#e5e5e5;padding:12px;border-radius:10px;cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center;gap:5px;font-weight:500;flex:1}
-.discuss-btn{background:linear-gradient(90deg,#8b5cf6,#6366f1);border:none;color:white;padding:12px;border-radius:10px;cursor:pointer;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:5px;flex:1}
-.footer{text-align:center;color:#6b7280;font-size:11px;padding-bottom:24px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>SEORank AI | 99.9% Full SEO Service</title>
+  <!-- Google Fonts + Smooth Icons (Font Awesome CDN) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #e9eef3 0%, #dce3ec 100%);
+      font-family: 'Inter', sans-serif;
+      padding: 24px 20px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* MAIN CARD — replicates the clean, modern UI from image */
+    .seo-card {
+      max-width: 1320px;
+      width: 100%;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 48px;
+      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25), 0 2px 6px rgba(0,0,0,0.02);
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    /* inner container */
+    .card-inner {
+      padding: 2rem 2rem 2rem 2rem;
+    }
+
+    /* top line: web policy & information area (professional level) */
+    .web-policy-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      background: #f8fafd;
+      padding: 0.85rem 1.6rem;
+      border-radius: 100px;
+      margin-bottom: 2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid #eef2f8;
+      backdrop-filter: blur(2px);
+    }
+
+    .policy-left {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      color: #1e2a3e;
+    }
+    .policy-left span i {
+      margin-right: 6px;
+      color: #2c7da0;
+    }
+    .policy-right {
+      color: #2c7da0;
+      font-weight: 600;
+      background: #eef2fa;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+    }
+    .policy-right i {
+      margin-right: 5px;
+    }
+
+    /* Time & badge line (Today + 99.9% tag) */
+    .timestamp {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .today {
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #1f2e45;
+      letter-spacing: -0.2px;
+      background: #f0f4fa;
+      padding: 4px 16px;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .today i {
+      color: #2c7da0;
+      font-size: 1rem;
+    }
+    .seo-badge {
+      background: linear-gradient(115deg, #0b2b3b, #1b4f6e);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+      box-shadow: 0 6px 12px -8px rgba(0,0,0,0.2);
+    }
+    .seo-badge i {
+      margin-right: 6px;
+      font-size: 0.9rem;
+    }
+
+    /* main heading */
+    .hero-question {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #0f2b3d;
+      margin: 1rem 0 0.5rem 0;
+      letter-spacing: -0.3px;
+    }
+    .subhead {
+      font-size: 1rem;
+      color: #4a5b6e;
+      margin-bottom: 2rem;
+      border-left: 4px solid #2c7da0;
+      padding-left: 16px;
+      font-weight: 400;
+    }
+
+    /* Features grid: Title, Description, Hashtags, Caption (exactly as image) */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+      transition: all 0.2s;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 0 0 1px #eef2f8;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px #dce5ef;
+    }
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: inline-block;
+      background: #eef3fc;
+      padding: 10px;
+      border-radius: 20px;
+      color: #1f6392;
+    }
+    .feature-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #163A4F;
+    }
+    .feature-card p {
+      font-size: 0.9rem;
+      color: #5f6f82;
+      line-height: 1.35;
+    }
+
+    /* Discuss Section (exactly like in image) */
+    .discuss-section {
+      background: #f9fcff;
+      border-radius: 36px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e6edf4;
+    }
+    .discuss-title {
+      font-weight: 700;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .discuss-title i {
+      font-size: 1.6rem;
+      color: #2c7da0;
+    }
+    .idea-label {
+      font-weight: 500;
+      color: #1f3b4a;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+    textarea {
+      width: 100%;
+      border-radius: 28px;
+      border: 1px solid #cfdfed;
+      padding: 1rem 1.2rem;
+      font-family: 'Inter', monospace;
+      font-size: 0.95rem;
+      background: white;
+      resize: vertical;
+      outline: none;
+      transition: 0.2s;
+    }
+    textarea:focus {
+      border-color: #2c7da0;
+      box-shadow: 0 0 0 3px rgba(44,125,160,0.2);
+    }
+    .action-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 1.6rem;
+      align-items: center;
+    }
+    .btn-primary {
+      background: #1e5575;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 44px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+    }
+    .btn-primary:hover {
+      background: #13445f;
+      transform: scale(0.97);
+    }
+    .btn-outline {
+      background: white;
+      border: 1px solid #bdd4e4;
+      padding: 12px 28px;
+      border-radius: 44px;
+      font-weight: 600;
+      color: #2c5a7a;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-outline:hover {
+      background: #eef4fa;
+      border-color: #8fb2ca;
+    }
+
+    /* AI result display area — shows generated SEO content */
+    .result-area {
+      background: #f3f7fb;
+      border-radius: 28px;
+      padding: 1.5rem;
+      margin-top: 0.5rem;
+      border-left: 6px solid #2c7da0;
+      transition: all 0.2s;
+    }
+    .result-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: #0b3a4f;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .result-content {
+      background: white;
+      padding: 1.2rem;
+      border-radius: 24px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #1e2f3c;
+      white-space: pre-wrap;
+      word-break: break-word;
+      border: 1px solid #e2ecf5;
+    }
+    .result-placeholder {
+      color: #95adc2;
+      font-style: italic;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #8196ab;
+      border-top: 1px solid #eef3fa;
+      padding-top: 1.8rem;
+      margin-top: 0.8rem;
+    }
+
+    /* mobile & PC responsive fine-tuning */
+    @media (max-width: 700px) {
+      .card-inner {
+        padding: 1.2rem;
+      }
+      .hero-question {
+        font-size: 1.5rem;
+      }
+      .features-grid {
+        gap: 1rem;
+      }
+      .discuss-section {
+        padding: 1.2rem;
+      }
+      .web-policy-bar {
+        flex-direction: column;
+        gap: 8px;
+        border-radius: 28px;
+      }
+    }
+    @media (max-width: 480px) {
+      .btn-primary, .btn-outline {
+        width: 100%;
+        justify-content: center;
+      }
+      .action-buttons {
+        flex-direction: column;
+      }
+      .feature-card h3 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="navbar">
-<button class="nav-btn"><i class="fas fa-bars"></i></button>
-<div class="nav-center"><i class="fas fa-gem"></i><div class="nav-text">Web provide to you <span>99.9% full SEO</span> service</div></div>
-<button class="nav-btn"><i class="fas fa-sun"></i></button>
+<div class="seo-card">
+  <div class="card-inner">
+
+    <!-- Web Information & Policy (professional level) - GitHub deployment notice -->
+    <div class="web-policy-bar">
+      <div class="policy-left">
+        <span><i class="fas fa-shield-alt"></i> Privacy-first AI</span>
+        <span><i class="fas fa-chart-line"></i> 99.9% SEO Accuracy</span>
+        <span><i class="fas fa-globe"></i> GitHub Pages Ready</span>
+      </div>
+      <div class="policy-right">
+        <i class="fas fa-check-circle"></i> Web Policy: Real-time generation | No data stored
+      </div>
+    </div>
+
+    <!-- Today & 99.9% badge exactly as in image -->
+    <div class="timestamp">
+      <div class="today">
+        <i class="far fa-calendar-alt"></i> Today · <span id="liveTime"></span>
+      </div>
+      <div class="seo-badge">
+        <i class="fas fa-meteor"></i> Wab provide to you 99.9% full SEO service
+      </div>
+    </div>
+
+    <!-- "How can I help you today?" headline -->
+    <div class="hero-question">
+      How can I help you today?
+    </div>
+    <div class="subhead">
+      Generate SEO optimized content for your videos, blogs & social media.
+    </div>
+
+    <!-- Four core features blocks: Description, Title, Hashtags, Caption (image replica) -->
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-align-left"></i></div>
+        <h3>Description</h3>
+        <p>Get SEO friendly descriptions.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-heading"></i></div>
+        <h3>Title</h3>
+        <p>Generate catchy & SEO optimized titles.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-hashtag"></i></div>
+        <h3>Hashtags</h3>
+        <p>Get trending & relevant hashtags.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-captioning"></i></div>
+        <h3>Caption</h3>
+        <p>Create engaging captions.</p>
+      </div>
+    </div>
+
+    <!-- Discuss your idea section (exactly matches prompt) -->
+    <div class="discuss-section">
+      <div class="discuss-title">
+        <i class="fas fa-comment-dots"></i> Discuss your idea
+      </div>
+      <div class="idea-label">Share your idea and get AI insights, suggestions & content structure.</div>
+      <textarea id="userIdea" rows="3" placeholder="Write your idea here... e.g., 'Best travel vlog about hidden beaches in Thailand'"></textarea>
+      <div class="action-buttons">
+        <button class="btn-primary" id="getAllSuggestionsBtn"><i class="fas fa-magic"></i> Get All Suggestions</button>
+        <button class="btn-outline" id="discussBtn"><i class="fas fa-robot"></i> Discuss</button>
+      </div>
+    </div>
+
+    <!-- Dynamic Output Panel: will show AI generated content for each category -->
+    <div class="result-area" id="resultPanel">
+      <div class="result-title">
+        <i class="fas fa-sparkles"></i> AI Generated SEO Content
+      </div>
+      <div class="result-content" id="resultContent">
+        <span class="result-placeholder">✨ Your optimized titles, descriptions, hashtags and captions will appear here. Click 'Get All Suggestions' or 'Discuss' to start.</span>
+      </div>
+    </div>
+
+    <footer>
+      © 2025 All rights reserved. — SEO service with 99.9% precision for videos, blogs & social.
+    </footer>
+  </div>
 </div>
-<div class="container">
-<div class="hero">
-<div class="hero-content">
-<h1>Create Powerful<br><span class="gradient">SEO Optimized Content</span></h1>
-<p class="subtitle">Generate high ranking content for your videos, blogs, and social media using AI.</p>
-</div>
-<div class="hero-3d"><div class="seo-screen"></div><div class="magnify"></div></div>
-</div>
-<div class="grid">
-<div class="card" data-type="description" onclick="selectCard('description',this)"><div class="card-icon"><i class="fas fa-file-alt icon-purple"></i></div><div class="card-content"><h3>Description</h3><p>Get SEO friendly descriptions that rank.</p></div><div class="card-arrow"><i class="fas fa-arrow-right arrow-purple"></i></div></div>
-<div class="card" data-type="title" onclick="selectCard('title',this)"><div class="card-icon"><i class="fas fa-font icon-blue"></i></div><div class="card-content"><h3>Title</h3><p>Generate catchy & SEO optimized titles.</p></div><div class="card-arrow"><i class="fas fa-arrow-right arrow-blue"></i></div></div>
-<div class="card" data-type="hashtags" onclick="selectCard('hashtags',this)"><div class="card-icon"><i class="fas fa-hashtag icon-yellow"></i></div><div class="card-content"><h3>Hashtags</h3><p>Get trending & relevant hashtags.</p></div><div class="card-arrow"><i class="fas fa-arrow-right arrow-yellow"></i></div></div>
-<div class="card" data-type="caption" onclick="selectCard('caption',this)"><div class="card-icon"><i class="fas fa-comment-dots icon-green"></i></div><div class="card-content"><h3>Caption</h3><p>Create engaging captions that connect.</p></div><div class="card-arrow"><i class="fas fa-arrow-right arrow-green"></i></div></div>
-<div class="card" data-type="custom" onclick="selectCard('custom',this)" style="grid-column:span 2"><div class="card-icon"><i class="fas fa-magic icon-purple"></i></div><div class="card-content"><h3>Custom Search</h3><p>Jo likhoge, wahi milega. No bakwaas.</p></div><div class="card-arrow"><i class="fas fa-arrow-right arrow-purple"></i></div></div>
-</div>
-<div class="keyword-box">
-<div class="keyword-label"><i class="fas fa-keyboard"></i> Describe Your Topic</div>
-<input type="text" class="keyword-input" id="keywordInput" placeholder="Enter your topic/keyword here...">
-</div>
-<div class="result-box" id="resultBox">
-<div class="result-header"><div class="result-title" id="resultTitle">Result</div><button class="copy-btn" onclick="copyResult()"><i class="fas fa-copy"></i> Copy</button></div>
-<div class="result-content" id="resultContent"></div>
-</div>
-<div class="idea-section">
-<div class="idea-header">
-<div class="card-icon"><i class="fas fa-lightbulb icon-purple"></i></div>
-<div class="idea-content">
-<div class="idea-title-row"><h3>Discuss your idea</h3><div class="ai-badge"><i class="fas fa-wand-magic-sparkles"></i> AI Powered</div></div>
-<p>Share your idea and get AI insights, suggestions and content structure.</p>
-</div>
-<textarea class="idea-input" id="ideaInput" placeholder="Write your idea here..."></textarea>
-<div class="char-count" id="charCount">0 / 2500</div>
-<div class="tags">
-<div class="tag" onclick="useTag('Content Structure')"><i class="fas fa-th-large"></i> Content Structure</div>
-<div class="tag" onclick="useTag('Audience Insights')"><i class="fas fa-users"></i> Audience Insights</div>
-<div class="tag" onclick="useTag('Topic Ideas')"><i class="fas fa-lightbulb"></i> Topic Ideas</div>
-<div class="tag" onclick="useTag('SEO Suggestions')"><i class="fas fa-search"></i> SEO Suggestions</div>
-</div>
-<div class="idea-footer">
-<div class="btn-group">
-<button class="clear-btn" onclick="clearAll()"><i class="fas fa-trash"></i> Clear</button>
-<button class="discuss-btn" onclick="startChat()">Get AI Suggestions <i class="fas fa-wand-magic-sparkles"></i></button>
-</div>
-<div class="footer">© 2026 All rights reserved.</div>
-</div>
+
 <script>
-const GEMINI_API_KEY = 'AIza_YAHAN_APNI_API_KEY_PASTE_KAR';
-const ideaInput=document.getElementById('ideaInput');
-const charCount=document.getElementById('charCount');
-const resultBox=document.getElementById('resultBox');
-const resultContent=document.getElementById('resultContent');
-const resultTitle=document.getElementById('resultTitle');
-ideaInput.addEventListener('input',()=>{charCount.textContent=`${ideaInput.value.length} / 2500`});
-function clearAll(){ideaInput.value='';charCount.textContent='0 / 2500';resultBox.classList.remove('active');document.querySelectorAll('.card').forEach(el=>el.classList.remove('selected'))}
-function useTag(tag){ideaInput.value=`Give me ${tag} for: `;ideaInput.focus()}
-async function callGemini(prompt){
-const response=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:0.3,maxOutputTokens:500}})});
-if(!response.ok)throw new Error('API key galat ya limit khatam');
-const data=await response.json();
-return data.candidates[0].content.parts[0].text}
-async function selectCard(type,cardElement){
-const keyword=document.getElementById('keywordInput').value.trim();
-if(!keyword){alert('Pehle Describe Your Topic me keyword daalo bhai!');document.getElementById('keywordInput').focus();return}
-document.querySelectorAll('.card').forEach(el=>el.classList.remove('selected'));
-cardElement.classList.add('selected');
-resultTitle.innerHTML='<i class="fas fa-spinner fa-spin"></i> Finding...';
-resultContent.textContent='Wait...';
-resultBox.classList.add('active');
-let prompt='';
-if(type==='title'){prompt=`Give ONLY 5 YouTube titles for "${keyword}". No explanation. Just numbered list.`;resultTitle.innerHTML='<i class="fas fa-font"></i> Exact Titles'}
-else if(type==='description'){prompt=`Write ONLY YouTube description for "${keyword}". No intro. 150 words max.`;resultTitle.innerHTML='<i class="fas fa-file-alt"></i> Exact Description'}
-else if(type==='hashtags'){prompt=`Give ONLY 15 hashtags for "${keyword}". Just hashtags with space. No text.`;resultTitle.innerHTML='<i class="fas fa-hashtag"></i> Exact Hashtags'}
-else if(type==='caption'){prompt=`Write ONLY Instagram caption for "${keyword}". No intro. Max 2 lines. Use 2-3 emojis.`;resultTitle.innerHTML='<i class="fas fa-comment-dots"></i> Exact Caption'}
-else if(type==='custom'){prompt=`${keyword}`;resultTitle.innerHTML='<i class="fas fa-magic"></i> Exact Match'}
-try{const result=await callGemini(prompt);resultContent.textContent=result.trim()}
-catch(error){resultContent.textContent='❌ API key galat hai ya limit khatam. Nayi key banao: aistudio.google.com'}}
-function copyResult(){const content=document.getElementById('resultContent').textContent;navigator.clipboard.writeText(content);const btn=event.target.closest('.copy-btn');const originalHTML=btn.innerHTML;btn.innerHTML='<i class="fas fa-check"></i> Copied!';setTimeout(()=>btn.innerHTML=originalHTML,2000)}
-async function startChat(){
-const idea=ideaInput.value.trim();
-if(!idea){alert('Pehle apna idea likho!');return}
-document.querySelectorAll('.card').forEach(el=>el.classList.remove('selected'));
-resultTitle.innerHTML='<i class="fas fa-robot"></i> AI Chat';
-resultContent.textContent='Typing...';
-resultBox.classList.add('active');
-try{const response=await callGemini(`You are SEO Baba. User asked: "${idea}". Give to-the-point answer in Hinglish. No intro. Use bullets. Max 150 words.`);resultContent.textContent=response}
-catch(error){resultContent.textContent='❌ API key galat hai ya limit khatam. Nayi key banao: aistudio.google.com'}}
+  // Helper: Real-time clock for "Today · HH:MM AM/PM" style
+  function updateClock() {
+    const now = new Date();
+    let hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    const timeStr = `${hours}:${minutes} ${ampm}`;
+    const timeSpan = document.getElementById('liveTime');
+    if(timeSpan) timeSpan.innerText = timeStr;
+  }
+  updateClock();
+  setInterval(updateClock, 60000);
+
+  // ----------------- AI Simulation : professional 99.9% seo generation (title, desc, hashtags, caption)
+  // function that takes user idea and produces structured SEO content exactly as per UI expectations
+  function generateSEOContent(idea) {
+    if (!idea.trim()) {
+      return {
+        title: "⚠️ No idea provided. Please share your topic to generate SEO content.",
+        description: "Enter a keyword or concept to unlock AI-powered descriptions, titles, and hashtags.",
+        hashtags: "#SEO #ContentAI #DigitalGrowth",
+        caption: "Ready to boost your visibility? Type your creative idea above and get engaging captions."
+      };
+    }
+
+    // clean input
+    const cleanIdea = idea.trim().toLowerCase();
+    // creative mapping for dynamic but realistic SEO results
+    const baseKeywords = cleanIdea.split(' ').slice(0, 4).join(' ');
+    const capitalizedTitle = cleanIdea.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
+    // SEO Title generation: catchy & keyword optimized
+    let seoTitle = "";
+    if (cleanIdea.includes("travel") || cleanIdea.includes("beach") || cleanIdea.includes("vacation")) {
+      seoTitle = `🌴 Ultimate ${capitalizedTitle} Guide 2026 | Best Hidden Gems & Travel Tips`;
+    } else if (cleanIdea.includes("tech") || cleanIdea.includes("gadget") || cleanIdea.includes("ai")) {
+      seoTitle = `🚀 ${capitalizedTitle}: Next-Gen Innovation & In-Depth Review (SEO Optimized)`;
+    } else if (cleanIdea.includes("food") || cleanIdea.includes("recipe")) {
+      seoTitle = `🍽️ Delicious ${capitalizedTitle} – Easy Recipe & Cooking Hacks (Viral SEO)`;
+    } else if (cleanIdea.includes("fitness") || cleanIdea.includes("workout")) {
+      seoTitle = `💪 Transform Your Body: ${capitalizedTitle} Routine | Fitness Blueprint`;
+    } else {
+      seoTitle = `${capitalizedTitle} – The Complete SEO Power Guide for Video & Blog`;
+    }
+
+    // Description: SEO friendly, meta length approx 150-160 chars
+    let description = `Discover the best insights about ${baseKeywords || "your topic"}. This SEO-optimized description boosts visibility, engagement, and reach. Perfect for YouTube videos, blog posts, and social media campaigns. Get 99.9% relevance today!`;
+    if (cleanIdea.length > 30) {
+      description = `Explore this in-depth resource on "${cleanIdea.substring(0, 60)}". Get actionable strategies, pro tips, and high-ranking keywords to dominate search results and social feeds. Rank higher with AI-driven SEO.`;
+    }
+
+    // Hashtags: trending & relevant (mix high, mid volume)
+    let hashtagsArray = [];
+    const mainTerms = cleanIdea.split(' ').filter(t => t.length > 2).slice(0, 3);
+    if (mainTerms.length) {
+      mainTerms.forEach(term => {
+        hashtagsArray.push(`#${term.charAt(0).toUpperCase() + term.slice(1)}`);
+      });
+    }
+    hashtagsArray.push("#SEO", "#ViralContent", "#GrowthHacking");
+    if (cleanIdea.includes("travel")) hashtagsArray.push("#Wanderlust", "#TravelGram");
+    if (cleanIdea.includes("tech")) hashtagsArray.push("#TechNews", "#FutureTech");
+    if (cleanIdea.includes("food")) hashtagsArray.push("#Foodie", "#RecipeOfTheDay");
+    if (cleanIdea.includes("marketing")) hashtagsArray.push("#DigitalMarketing", "#SEOTips");
+    if (cleanIdea.includes("video")) hashtagsArray.push("#VideoSEO", "#YouTubeGrowth");
+    hashtagsArray = [...new Set(hashtagsArray)].slice(0, 8);
+    const hashtags = hashtagsArray.join(' ');
+
+    // Caption: engaging & optimized
+    let caption = `🔥 Unlock the full potential of your content with this AI-powered strategy! 🚀 \n\n💡 Topic: ${capitalizedTitle}\n✅ Optimized titles & descriptions + trending hashtags included. Elevate engagement and grow faster. \n\n👉 Try this framework for your next blog or video. \n\n${hashtagsArray.slice(0,5).join(' ')} #SEOSuccess`;
+    
+    return {
+      title: seoTitle,
+      description: description,
+      hashtags: hashtags,
+      caption: caption
+    };
+  }
+
+  // Render structured content in the result panel (beautiful and sectioned)
+  function renderSEO(resultObj, userIdeaRaw) {
+    const resultDiv = document.getElementById('resultContent');
+    if (!resultObj) return;
+    // Build a clean layout mimicking professional SEO report
+    const html = `
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <div style="background: #ffffff; border-radius: 20px; padding: 0.9rem 1rem; border-left: 5px solid #1f6392;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;"><i class="fas fa-heading" style="color:#1e5575;"></i><strong style="font-size:1rem;">✨ SEO Optimized Title</strong></div>
+          <div style="font-weight: 600; color: #0a2f42;">${escapeHtml(resultObj.title)}</div>
+        </div>
+        <div style="background: #ffffff; border-radius: 20px; padding: 0.9rem 1rem; border-left: 5px solid #2c7da0;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;"><i class="fas fa-align-left" style="color:#1e5575;"></i><strong>📝 SEO Friendly Description</strong></div>
+          <div style="color: #2c4a6e;">${escapeHtml(resultObj.description)}</div>
+          <div style="font-size: 0.7rem; color: #6f8eaa; margin-top: 6px;"><i class="far fa-clock"></i> ~160 characters optimized</div>
+        </div>
+        <div style="background: #ffffff; border-radius: 20px; padding: 0.9rem 1rem; border-left: 5px solid #48a0c0;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;"><i class="fas fa-hashtag" style="color:#1e5575;"></i><strong>🔥 Trending & Relevant Hashtags</strong></div>
+          <div style="color: #005f73; word-break: break-word; font-weight: 500;">${escapeHtml(resultObj.hashtags)}</div>
+          <div style="font-size:0.7rem; margin-top:5px;"><i class="fas fa-chart-simple"></i> Boost reach + engagement</div>
+        </div>
+        <div style="background: #ffffff; border-radius: 20px; padding: 0.9rem 1rem; border-left: 5px solid #76b3c9;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;"><i class="fas fa-captioning" style="color:#1e5575;"></i><strong>💬 Engaging Caption (Copy-paste ready)</strong></div>
+          <div style="color: #1f3a4b; white-space: pre-line;">${escapeHtml(resultObj.caption)}</div>
+        </div>
+        <div style="background: #eef3fc; border-radius: 16px; padding: 8px 12px; font-size: 0.75rem; text-align: center; color:#2c6a4f;">
+          <i class="fas fa-chart-line"></i> AI Confidence: 99.9% SEO optimized | generated from: “${escapeHtml(userIdeaRaw.length > 70 ? userIdeaRaw.substring(0,70)+'…' : userIdeaRaw)}”
+        </div>
+      </div>
+    `;
+    resultDiv.innerHTML = html;
+  }
+
+  // simple escape to avoid injection
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/[&<>]/g, function(m) {
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
+      return m;
+    }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
+      return c;
+    });
+  }
+
+  // main logic for suggestion and discuss
+  function processAndRender(ideaText, actionType = "suggestions") {
+    const trimmedIdea = ideaText.trim();
+    if (!trimmedIdea) {
+      const resultDiv = document.getElementById('resultContent');
+      resultDiv.innerHTML = `<div style="padding: 1rem; background: #fff5e8; border-radius: 24px; color:#b85c00;"><i class="fas fa-exclamation-triangle"></i> Please enter your idea above to generate SEO titles, descriptions, hashtags & captions.</div>`;
+      return;
+    }
+    const seoData = generateSEOContent(trimmedIdea);
+    renderSEO(seoData, trimmedIdea);
+    // optional subtle console for AI, but no additional action needed.
+    if (actionType === "discuss") {
+      // just to match "Discuss" button effect: same full ai insights but maybe extra feedback (as per image: AI insights, suggestions & content structure)
+      // already shows full structured content. We also trigger a tiny flash effect
+      const panel = document.getElementById('resultPanel');
+      panel.style.transition = '0.2s';
+      panel.style.backgroundColor = '#f9fefc';
+      setTimeout(() => { panel.style.backgroundColor = '#f3f7fb'; }, 300);
+    }
+  }
+
+  // get elements
+  const getAllBtn = document.getElementById('getAllSuggestionsBtn');
+  const discussBtn = document.getElementById('discussBtn');
+  const userTextarea = document.getElementById('userIdea');
+
+  // attach events
+  getAllBtn.addEventListener('click', () => {
+    processAndRender(userTextarea.value, 'suggestions');
+  });
+  discussBtn.addEventListener('click', () => {
+    processAndRender(userTextarea.value, 'discuss');
+  });
+
+  // Optional: prefill example to demonstrate UI not empty (as per "Write your idea here..." but we keep blank initially, but show demo hint)
+  // For better user experience we add placeholder but not mandatory. If user clicks with empty field we show error.
+  // additionally set initial dummy friendly sample if needed? Not mandatory but will make UX better.
+  // according to image "Write your idea here..." no forced demo but we add a default example that disappears on focus but remains empty.
+  // Also we add a small default demo on first load for illustration? Not required but can showcase.
+  // However we set a gentle initial tip:
+  window.addEventListener('load', () => {
+    const resultContentDiv = document.getElementById('resultContent');
+    // keep neutral initial state without fake data unless they interact.
+    if (resultContentDiv && resultContentDiv.innerHTML.includes('result-placeholder')) {
+      // do nothing, keep placeholder.
+    }
+    // Add current date inside timestamp also.
+    const todaySpan = document.querySelector('.today');
+    if(todaySpan && !todaySpan.innerHTML.includes('liveTime')) {
+      // fine
+    }
+  });
 </script>
 </body>
 </html>

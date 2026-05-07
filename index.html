@@ -19,45 +19,70 @@
       align-items: center;
       padding: 12px 16px;
       border-bottom: 1px solid #1f1f1f;
-      background: #0a0a0a;
     }
-    .nav-left { display: flex; align-items: center; gap: 8px; flex: 1; }
+    .nav-box {
+      background: #111111;
+      border: 1px solid #1f1f1f;
+      padding: 8px 12px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
     .menu-btn {
       background: transparent;
       border: 1px solid #2a2a2a;
       color: #e5e5e5;
-      padding: 6px 8px;
-      border-radius: 8px;
+      padding: 8px 10px;
+      border-radius: 10px;
       cursor: pointer;
-      flex-shrink: 0;
     }
-    .logo { font-size: 12px; color: #9ca3af; line-height: 1.3; }
+    .logo { font-size: 12px; color: #9ca3af; }
     .logo span { color: #8b5cf6; font-weight: 600; }
+    .logo-icon { 
+      color: #8b5cf6; 
+      font-size: 16px;
+    }
     .theme-btn {
       background: transparent;
       border: 1px solid #2a2a2a;
       color: #e5e5e5;
-      padding: 6px 8px;
-      border-radius: 8px;
+      padding: 8px 10px;
+      border-radius: 10px;
       cursor: pointer;
-      flex-shrink: 0;
     }
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 24px 16px;
     }
-    h1 {
-      font-size: 32px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      line-height: 1.2;
+    .hero {
+      margin-bottom: 32px;
+      position: relative;
     }
-    h1 span { color: #8b5cf6; }
+    h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+    h1 .gradient {
+      background: linear-gradient(90deg, #8b5cf6, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
     .subtitle {
       color: #9ca3af;
-      font-size: 14px;
-      margin-bottom: 24px;
+      font-size: 15px;
+      max-width: 500px;
+      line-height: 1.5;
+    }
+    .hero-img {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 140px;
+      opacity: 0.9;
     }
     .grid {
       display: grid;
@@ -71,33 +96,53 @@
       padding: 16px;
       border-radius: 12px;
       cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: start;
+      gap: 12px;
     }
-    .card:active { border-color: #8b5cf6; }
+    .card-content { flex: 1; }
     .card-icon {
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       background: #1a1a1a;
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 10px;
       font-size: 16px;
+      flex-shrink: 0;
     }
     .card h3 {
-      font-size: 14px;
+      font-size: 15px;
       margin-bottom: 4px;
       font-weight: 600;
     }
     .card p {
       font-size: 12px;
       color: #9ca3af;
-      line-height: 1.3;
+      line-height: 1.4;
+    }
+    .card-arrow {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
     .icon-purple { color: #a78bfa; }
     .icon-blue { color: #60a5fa; }
-    .icon-green { color: #34d399; }
     .icon-yellow { color: #fbbf24; }
+    .icon-green { color: #34d399; }
+    .arrow-purple { color: #a78bfa; }
+    .arrow-blue { color: #60a5fa; }
+    .arrow-yellow { color: #fbbf24; }
+    .arrow-green { color: #34d399; }
+    
     .idea-section {
       background: #111111;
       border: 1px solid #1f1f1f;
@@ -107,20 +152,36 @@
     }
     .idea-header {
       display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 12px;
+    }
+    .idea-left {
+      display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
+      gap: 12px;
     }
     .idea-header h3 {
-      color: #8b5cf6;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 600;
+      margin-bottom: 4px;
     }
     .idea-section p {
       color: #9ca3af;
       font-size: 13px;
-      margin-bottom: 14px;
       line-height: 1.4;
+    }
+    .ai-badge {
+      background: #1a1a1a;
+      border: 1px solid #8b5cf6;
+      color: #a78bfa;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
     }
     .idea-input {
       width: 100%;
@@ -130,10 +191,34 @@
       padding: 14px;
       border-radius: 8px;
       font-size: 14px;
-      margin-bottom: 14px;
-      min-height: 80px;
+      margin: 16px 0 8px 0;
+      min-height: 90px;
       resize: vertical;
       font-family: inherit;
+    }
+    .char-count {
+      text-align: right;
+      font-size: 12px;
+      color: #6b7280;
+      margin-bottom: 16px;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .tag {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      color: #9ca3af;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
     }
     .idea-footer {
       display: flex;
@@ -141,11 +226,15 @@
       align-items: center;
       gap: 10px;
     }
-    .ai-btn {
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+    .clear-btn {
       background: #1a1a1a;
       border: 1px solid #2a2a2a;
       color: #e5e5e5;
-      padding: 9px 12px;
+      padding: 10px 16px;
       border-radius: 8px;
       cursor: pointer;
       font-size: 13px;
@@ -153,11 +242,11 @@
       align-items: center;
       gap: 6px;
     }
-    .discuss-btn {
-      background: #8b5cf6;
+    .ai-suggest-btn {
+      background: linear-gradient(90deg, #8b5cf6, #6366f1);
       border: none;
       color: white;
-      padding: 9px 16px;
+      padding: 10px 18px;
       border-radius: 8px;
       cursor: pointer;
       font-size: 13px;
@@ -166,16 +255,28 @@
       align-items: center;
       gap: 6px;
     }
+    .discuss-btn {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      color: #e5e5e5;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
     .ads-box {
       background: #111111;
       border: 1px dashed #2a2a2a;
-      padding: 32px;
+      padding: 36px;
       border-radius: 12px;
       text-align: center;
       color: #6b7280;
       margin-bottom: 32px;
     }
-    .ads-box i { font-size: 20px; margin-bottom: 6px; }
+    .ads-box i { font-size: 20px; margin-bottom: 8px; }
     .footer {
       text-align: center;
       color: #6b7280;
@@ -186,53 +287,87 @@
 </head>
 <body>
   <div class="navbar">
-    <div class="nav-left">
-      <button class="menu-btn"><i class="fas fa-bars"></i></button>
+    <button class="menu-btn"><i class="fas fa-bars"></i></button>
+    <div class="nav-box">
+      <i class="fas fa-gem logo-icon"></i>
       <div class="logo">Web provide to you <span>99.9% full SEO</span> service</div>
     </div>
     <button class="theme-btn"><i class="fas fa-sun"></i></button>
   </div>
 
   <div class="container">
-    <h1>How can I help<br>you <span>today?</span></h1>
-    <p class="subtitle">Generate SEO optimized content for your videos, blogs & social media.</p>
+    <div class="hero">
+      <h1>Create Powerful<br><span class="gradient">SEO Optimized Content</span></h1>
+      <p class="subtitle">Generate high ranking content for your videos, blogs, and social media using AI.</p>
+    </div>
 
     <div class="grid">
       <div class="card">
         <div class="card-icon"><i class="fas fa-file-alt icon-purple"></i></div>
-        <h3>Description</h3>
-        <p>Get SEO friendly descriptions.</p>
+        <div class="card-content">
+          <h3>Description</h3>
+          <p>Get SEO friendly descriptions that rank.</p>
+        </div>
+        <div class="card-arrow"><i class="fas fa-arrow-right arrow-purple"></i></div>
       </div>
       
       <div class="card">
         <div class="card-icon"><i class="fas fa-font icon-blue"></i></div>
-        <h3>Title</h3>
-        <p>Generate catchy & SEO optimized titles.</p>
+        <div class="card-content">
+          <h3>Title</h3>
+          <p>Generate catchy & SEO optimized titles.</p>
+        </div>
+        <div class="card-arrow"><i class="fas fa-arrow-right arrow-blue"></i></div>
       </div>
       
       <div class="card">
-        <div class="card-icon"><i class="fas fa-hashtag icon-green"></i></div>
-        <h3>Hashtags</h3>
-        <p>Get trending & relevant hashtags.</p>
+        <div class="card-icon"><i class="fas fa-hashtag icon-yellow"></i></div>
+        <div class="card-content">
+          <h3>Hashtags</h3>
+          <p>Get trending & relevant hashtags.</p>
+        </div>
+        <div class="card-arrow"><i class="fas fa-arrow-right arrow-yellow"></i></div>
       </div>
       
       <div class="card">
-        <div class="card-icon"><i class="fas fa-comment-dots icon-yellow"></i></div>
-        <h3>Caption</h3>
-        <p>Create engaging captions.</p>
+        <div class="card-icon"><i class="fas fa-comment-dots icon-green"></i></div>
+        <div class="card-content">
+          <h3>Caption</h3>
+          <p>Create engaging captions that connect.</p>
+        </div>
+        <div class="card-arrow"><i class="fas fa-arrow-right arrow-green"></i></div>
       </div>
     </div>
 
     <div class="idea-section">
       <div class="idea-header">
-        <div class="card-icon"><i class="fas fa-lightbulb icon-purple"></i></div>
-        <h3>Discuss your idea</h3>
+        <div class="idea-left">
+          <div class="card-icon"><i class="fas fa-lightbulb icon-purple"></i></div>
+          <div>
+            <h3>Discuss your idea</h3>
+            <p>Share your idea and get AI insights, suggestions<br>and content structure.</p>
+          </div>
+        </div>
+        <div class="ai-badge"><i class="fas fa-wand-magic-sparkles"></i> AI Powered</div>
       </div>
-      <p>Share your idea and get AI insights, suggestions & content structure.</p>
+      
       <textarea class="idea-input" placeholder="Write your idea here..."></textarea>
+      <div class="char-count">0 / 2500</div>
+      
+      <div class="tags">
+        <div class="tag"><i class="fas fa-th-large"></i> Content Structure</div>
+        <div class="tag"><i class="fas fa-users"></i> Audience Insights</div>
+        <div class="tag"><i class="fas fa-lightbulb"></i> Topic Ideas</div>
+        <div class="tag"><i class="fas fa-search"></i> SEO Suggestions</div>
+        <div class="tag"><i class="fas fa-chart-line"></i> Competitor Analysis</div>
+      </div>
+      
       <div class="idea-footer">
-        <button class="ai-btn"><i class="fas fa-wand-magic-sparkles"></i> AI Suggest</button>
-        <button class="discuss-btn">Discuss <i class="fas fa-paper-plane"></i></button>
+        <button class="clear-btn"><i class="fas fa-trash"></i> Clear</button>
+        <div class="btn-group">
+          <button class="ai-suggest-btn">Get AI Suggestions <i class="fas fa-wand-magic-sparkles"></i></button>
+          <button class="discuss-btn">Discuss <i class="fas fa-paper-plane"></i></button>
+        </div>
       </div>
     </div>
 

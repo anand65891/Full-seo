@@ -6,9 +6,10 @@
   <title>SEO Baba 2026 - 99.9% Full SEO Service</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: #0a0a0a; 
       color: #e5e5e5; 
       min-height: 100vh;
@@ -17,122 +18,187 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 16px;
-      border-bottom: 1px solid #1f1f1f;
+      padding: 16px;
+      gap: 12px;
     }
-    .nav-box {
-      background: #111111;
-      border: 1px solid #1f1f1f;
-      padding: 8px 12px;
-      border-radius: 10px;
+    .nav-btn {
+      background: transparent;
+      border: 1px solid #2a2a2a;
+      color: #e5e5e5;
+      padding: 10px;
+      border-radius: 12px;
+      cursor: pointer;
+      width: 42px;
+      height: 42px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
     }
-    .menu-btn {
-      background: transparent;
-      border: 1px solid #2a2a2a;
-      color: #e5e5e5;
-      padding: 8px 10px;
-      border-radius: 10px;
-      cursor: pointer;
+    .nav-center {
+      background: #111111;
+      border: 1px solid #1f1f1f;
+      padding: 10px 16px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      justify-content: center;
     }
-    .logo { font-size: 12px; color: #9ca3af; }
-    .logo span { color: #8b5cf6; font-weight: 600; }
-    .logo-icon { 
-      color: #8b5cf6; 
-      font-size: 16px;
+    .nav-center i {
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 18px;
     }
-    .theme-btn {
-      background: transparent;
-      border: 1px solid #2a2a2a;
-      color: #e5e5e5;
-      padding: 8px 10px;
-      border-radius: 10px;
-      cursor: pointer;
-    }
+    .nav-text { font-size: 13px; color: #9ca3af; font-weight: 500; }
+    .nav-text span { color: #a78bfa; font-weight: 600; }
+    
     .container {
-      max-width: 900px;
+      padding: 20px 16px;
+      max-width: 500px;
       margin: 0 auto;
-      padding: 24px 16px;
     }
     .hero {
-      margin-bottom: 32px;
+      margin-bottom: 28px;
       position: relative;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
     }
     h1 {
       font-size: 36px;
       font-weight: 700;
       margin-bottom: 12px;
-      line-height: 1.1;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
     }
     h1 .gradient {
-      background: linear-gradient(90deg, #8b5cf6, #60a5fa);
+      background: linear-gradient(90deg, #a78bfa, #60a5fa);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .subtitle {
       color: #9ca3af;
-      font-size: 15px;
-      max-width: 500px;
-      line-height: 1.5;
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 320px;
+      font-weight: 400;
     }
-    .hero-img {
+    .hero-3d {
       position: absolute;
-      right: 0;
-      top: 0;
-      width: 140px;
-      opacity: 0.9;
+      right: -10px;
+      top: -10px;
+      width: 160px;
+      height: 160px;
+      z-index: 1;
     }
+    .seo-screen {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+      border: 2px solid #2a2a2a;
+      border-radius: 16px;
+      position: relative;
+      box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
+    }
+    .seo-screen::before {
+      content: 'SEO';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 32px;
+      font-weight: 700;
+      color: #e5e5e5;
+    }
+    .seo-screen::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 25px;
+      background: radial-gradient(ellipse, rgba(139, 92, 246, 0.5), transparent);
+      filter: blur(12px);
+    }
+    .magnify {
+      position: absolute;
+      right: 15px;
+      top: 40%;
+      width: 35px;
+      height: 35px;
+      border: 3px solid #8b5cf6;
+      border-radius: 50%;
+      z-index: 3;
+    }
+    .magnify::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      right: -5px;
+      width: 3px;
+      height: 15px;
+      background: #8b5cf6;
+      transform: rotate(-45deg);
+    }
+    
     .grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 12px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
     .card {
       background: #111111;
       border: 1px solid #1f1f1f;
       padding: 16px;
-      border-radius: 12px;
+      border-radius: 14px;
       cursor: pointer;
-      position: relative;
       display: flex;
-      align-items: start;
+      align-items: center;
       gap: 12px;
+      min-height: 98px;
+      transition: all 0.2s;
     }
-    .card-content { flex: 1; }
+    .card:active { border-color: #8b5cf6; transform: scale(0.98); }
     .card-icon {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       background: #1a1a1a;
-      border-radius: 8px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
+      font-size: 17px;
       flex-shrink: 0;
     }
+    .card-content { flex: 1; min-width: 0; }
     .card h3 {
       font-size: 15px;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
       font-weight: 600;
+      color: #f5f5f5;
     }
     .card p {
-      font-size: 12px;
+      font-size: 11.5px;
       color: #9ca3af;
       line-height: 1.4;
+      font-weight: 400;
     }
     .card-arrow {
       background: #1a1a1a;
       border: 1px solid #2a2a2a;
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      font-size: 14px;
     }
     .icon-purple { color: #a78bfa; }
     .icon-blue { color: #60a5fa; }
@@ -146,42 +212,48 @@
     .idea-section {
       background: #111111;
       border: 1px solid #1f1f1f;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 20px;
+      padding: 18px;
+      border-radius: 14px;
+      margin-bottom: 16px;
     }
     .idea-header {
       display: flex;
-      justify-content: space-between;
       align-items: start;
+      gap: 12px;
       margin-bottom: 12px;
     }
-    .idea-left {
+    .idea-content { flex: 1; }
+    .idea-title-row {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 12px;
+      margin-bottom: 6px;
+      gap: 10px;
     }
     .idea-header h3 {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 600;
-      margin-bottom: 4px;
+      color: #f5f5f5;
     }
     .idea-section p {
       color: #9ca3af;
-      font-size: 13px;
-      line-height: 1.4;
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 400;
     }
     .ai-badge {
       background: #1a1a1a;
       border: 1px solid #8b5cf6;
       color: #a78bfa;
       padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 12px;
+      border-radius: 10px;
+      font-size: 11px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       white-space: nowrap;
+      flex-shrink: 0;
+      font-weight: 500;
     }
     .idea-input {
       width: 100%;
@@ -189,80 +261,73 @@
       border: 1px solid #1f1f1f;
       color: #e5e5e5;
       padding: 14px;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 14px;
-      margin: 16px 0 8px 0;
-      min-height: 90px;
+      margin: 14px 0 6px 0;
+      min-height: 95px;
       resize: vertical;
       font-family: inherit;
+      font-weight: 400;
     }
+    .idea-input::placeholder { color: #6b7280; }
     .char-count {
       text-align: right;
-      font-size: 12px;
+      font-size: 11px;
       color: #6b7280;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
+      font-weight: 400;
     }
     .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .tag {
       background: #1a1a1a;
       border: 1px solid #2a2a2a;
       color: #9ca3af;
-      padding: 8px 12px;
-      border-radius: 8px;
-      font-size: 12px;
+      padding: 8px 11px;
+      border-radius: 10px;
+      font-size: 11px;
       display: flex;
       align-items: center;
       gap: 6px;
       cursor: pointer;
+      font-weight: 400;
     }
     .idea-footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
     .btn-group {
       display: flex;
-      gap: 10px;
+      gap: 8px;
     }
-    .clear-btn {
+    .clear-btn, .discuss-btn {
       background: #1a1a1a;
       border: 1px solid #2a2a2a;
       color: #e5e5e5;
-      padding: 10px 16px;
-      border-radius: 8px;
+      padding: 10px 14px;
+      border-radius: 10px;
       cursor: pointer;
-      font-size: 13px;
+      font-size: 12px;
       display: flex;
       align-items: center;
       gap: 6px;
+      font-weight: 500;
     }
     .ai-suggest-btn {
       background: linear-gradient(90deg, #8b5cf6, #6366f1);
       border: none;
       color: white;
-      padding: 10px 18px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 13px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .discuss-btn {
-      background: #1a1a1a;
-      border: 1px solid #2a2a2a;
-      color: #e5e5e5;
       padding: 10px 16px;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
-      font-size: 13px;
+      font-size: 12px;
+      font-weight: 600;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -270,35 +335,44 @@
     .ads-box {
       background: #111111;
       border: 1px dashed #2a2a2a;
-      padding: 36px;
-      border-radius: 12px;
+      padding: 38px;
+      border-radius: 14px;
       text-align: center;
       color: #6b7280;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
     }
-    .ads-box i { font-size: 20px; margin-bottom: 8px; }
+    .ads-box i { font-size: 20px; margin-bottom: 8px; display: block; }
+    .ads-box div { font-size: 13px; font-weight: 400; }
+    .ads-box div:last-child { font-size: 11px; margin-top: 4px; }
     .footer {
       text-align: center;
       color: #6b7280;
-      font-size: 12px;
-      padding-bottom: 20px;
+      font-size: 11px;
+      padding-bottom: 24px;
+      font-weight: 400;
     }
   </style>
 </head>
 <body>
   <div class="navbar">
-    <button class="menu-btn"><i class="fas fa-bars"></i></button>
-    <div class="nav-box">
+    <button class="nav-btn"><i class="fas fa-bars"></i></button>
+    <div class="nav-center">
       <i class="fas fa-gem logo-icon"></i>
-      <div class="logo">Web provide to you <span>99.9% full SEO</span> service</div>
+      <div class="nav-text">Web provide to you <span>99.9% full SEO</span> service</div>
     </div>
-    <button class="theme-btn"><i class="fas fa-sun"></i></button>
+    <button class="nav-btn"><i class="fas fa-sun"></i></button>
   </div>
 
   <div class="container">
     <div class="hero">
-      <h1>Create Powerful<br><span class="gradient">SEO Optimized Content</span></h1>
-      <p class="subtitle">Generate high ranking content for your videos, blogs, and social media using AI.</p>
+      <div class="hero-content">
+        <h1>Create Powerful<br><span class="gradient">SEO Optimized Content</span></h1>
+        <p class="subtitle">Generate high ranking content for your videos, blogs, and social media using AI.</p>
+      </div>
+      <div class="hero-3d">
+        <div class="seo-screen"></div>
+        <div class="magnify"></div>
+      </div>
     </div>
 
     <div class="grid">
@@ -341,14 +415,14 @@
 
     <div class="idea-section">
       <div class="idea-header">
-        <div class="idea-left">
-          <div class="card-icon"><i class="fas fa-lightbulb icon-purple"></i></div>
-          <div>
+        <div class="card-icon"><i class="fas fa-lightbulb icon-purple"></i></div>
+        <div class="idea-content">
+          <div class="idea-title-row">
             <h3>Discuss your idea</h3>
-            <p>Share your idea and get AI insights, suggestions<br>and content structure.</p>
+            <div class="ai-badge"><i class="fas fa-wand-magic-sparkles"></i> AI Powered</div>
           </div>
+          <p>Share your idea and get AI insights, suggestions and content structure.</p>
         </div>
-        <div class="ai-badge"><i class="fas fa-wand-magic-sparkles"></i> AI Powered</div>
       </div>
       
       <textarea class="idea-input" placeholder="Write your idea here..."></textarea>
@@ -374,7 +448,7 @@
     <div class="ads-box">
       <i class="fas fa-bullhorn"></i>
       <div>Ads Space</div>
-      <div style="font-size: 12px; margin-top: 4px;">Your ad here</div>
+      <div>Your ad here</div>
     </div>
 
     <div class="footer">© 2026 All rights reserved.</div>

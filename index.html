@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>SEO Baba 2026</title>
+<title>SEO Baba 2026 - AI Viral Content</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif}
@@ -40,6 +40,7 @@ body{background:#0f172a;color:#f1f5f9;overflow:hidden}
 @keyframes spin{100%{transform:rotate(360deg)}}
 .error{color:#f87171;text-align:center;padding:20px}
 .footer{text-align:center;margin-top:30px;color:#64748b;font-size:13px;padding-bottom:20px}
+.footer a{color:#94a3b8;margin:0 10px;text-decoration:none}
 </style>
 </head>
 <body>
@@ -52,33 +53,33 @@ body{background:#0f172a;color:#f1f5f9;overflow:hidden}
 <div class="container">
 <div class="header">
 <h1>SEO Baba 2026</h1>
-<p>AI-Powered SEO Content Generator</p>
+<p>AI Viral Content Generator - 2026 Algorithm</p>
 </div>
 <div class="grid">
 <div class="card" onclick="selectType('description')">
 <i class="fas fa-file-alt"></i>
-<h3>Description</h3>
-<p>Video/product desc</p>
+<h3>Viral Description</h3>
+<p>Rank + WatchTime</p>
 </div>
 <div class="card" onclick="selectType('title')">
 <i class="fas fa-heading"></i>
-<h3>Title</h3>
-<p>Catchy titles</p>
+<h3>CTR Title</h3>
+<p>High Click Rate</p>
 </div>
 <div class="card" onclick="selectType('hashtags')">
 <i class="fas fa-hashtag"></i>
-<h3>Hashtags</h3>
-<p>Trending tags</p>
+<h3>Trend Tags</h3>
+<p>2026 Trending</p>
 </div>
 <div class="card" onclick="selectType('caption')">
 <i class="fas fa-comment"></i>
-<h3>Caption</h3>
-<p>Social media</p>
+<h3>Viral Caption</h3>
+<p>Reels + Shorts</p>
 </div>
 </div>
 <div class="keyword-box">
-<div class="keyword-label"><i class="fas fa-keyboard"></i> Enter Keyword or Topic</div>
-<input type="text" class="keyword-input" id="keywordInput" placeholder="e.g. fitness tips, digital marketing">
+<div class="keyword-label"><i class="fas fa-fire"></i> Enter Trending Keyword/Topic</div>
+<input type="text" class="keyword-input" id="keywordInput" placeholder="e.g. AI tools 2026, weight loss challenge">
 </div>
 <div class="result-box" id="resultBox">
 <div class="result-header">
@@ -87,13 +88,19 @@ body{background:#0f172a;color:#f1f5f9;overflow:hidden}
 </div>
 <div class="result-content" id="resultContent"></div>
 </div>
-<div class="footer">© 2026 All rights reserved.</div>
+<div class="footer">
+<a href="about.html">About</a> |
+<a href="contact.html">Contact</a> |
+<a href="privacy-policy.html">Privacy Policy</a>
+<br><br>© 2026 SEO Baba. All rights reserved.
+</div>
 </div>
 </div>
 
 <script>
-  
-const GEMINI_API_KEY = 'AIzaSyCH2xdpGIwGCOKdKWF2jPRDoZ_3zNc4Sfk';
+// ⚠️ YAHAN APNI GEMINI API KEY DALO ⚠️
+const GEMINI_API_KEY = 'AIzaSyAMGPgislmrJwUjiax8KeuinG73_SdsZUg';
+
 const homeScreen=document.getElementById('homeScreen');
 const toolScreen=document.getElementById('toolScreen');
 const resultBox=document.getElementById('resultBox');
@@ -117,20 +124,84 @@ keywordInput.value='';
 
 function selectType(type){
 const keyword=keywordInput.value.trim();
-if(!keyword){alert('Please enter a keyword first!');return;}
+if(!keyword){alert('Enter trending keyword first!');return;}
 generateContent(keyword,type);
 }
 
 async function generateContent(keyword,type){
 resultBox.style.display='block';
-resultContent.innerHTML='<div class="loading"><i class="fas fa-spinner"></i><p>Generating...</p></div>';
-resultTitle.textContent=type.charAt(0).toUpperCase()+type.slice(1);
+resultContent.innerHTML='<div class="loading"><i class="fas fa-spinner"></i><p>Analyzing 2026 Trends...</p></div>';
+resultTitle.textContent=type.charAt(0).toUpperCase()+type.slice(1)+' - 2026 Optimized';
 
 let prompt='';
-if(type==='description')prompt=`Write a SEO-optimized YouTube video description for: ${keyword}. Make it 100-150 words, engaging, with call to action.`;
-else if(type==='title')prompt=`Generate 5 catchy, clickbait YouTube video titles for: ${keyword}. Number them 1-5.`;
-else if(type==='hashtags')prompt=`Generate 15 trending hashtags for: ${keyword}. Mix popular and niche tags. Start each with #.`;
-else if(type==='caption')prompt=`Write 3 engaging Instagram captions for: ${keyword}. Add emojis. Separate each with ---`;
+const year = new Date().getFullYear();
+
+// 99.9% SEO + TRENDING PROMPTS 2026
+if(type==='description'){
+prompt=`You are a YouTube Algorithm Expert for 2026. Create a VIRAL YouTube description for "${keyword}".
+
+STRICT SEO RULES 2026:
+1. First 125 characters: Hook + exact keyword "${keyword}" + curiosity. This shows in search.
+2. Word count: 150-180 words. YouTube 2026 prefers this length.
+3. Keyword density: Use "${keyword}" exactly 5 times. Use 6 LSI keywords naturally.
+4. Structure: Hook > Problem > Solution > Timestamps > CTA > Hashtags.
+5. Timestamps mandatory: 0:00 Hook, 0:15 Problem, 0:45 Solution, 2:30 Results, 3:00 CTA.
+6. CTA: "Subscribe + Bell Icon" + "Comment '${keyword} 2026' if you agree".
+7. End with 3 hashtags: #${keyword.replace(/\s+/g,'')} #${keyword.replace(/\s+/g,'')}2026 #Viral${year}
+8. NO fluff. NO "Hello friends". NO emojis. NO generic lines. Direct value only.
+9. Use 2026 trending words: Ultimate Guide, Secret, Proven, Challenge, Transformation.
+
+Output ONLY the description text.`;
+
+}else if(type==='title'){
+prompt=`You are a CTR Specialist for YouTube 2026. Generate 5 VIRAL titles for "${keyword}" that get 15%+ CTR.
+
+2026 TITLE ALGORITHM RULES:
+1. Length: 58-62 characters. Perfect for mobile + desktop.
+2. Pattern: Number + Power Word + Keyword + Curiosity + Year.
+3. Main keyword "${keyword}" must be within first 25 characters.
+4. Power Words 2026: Exposed, Secret, Ultimate, Banned, Shocking, Proven, Hidden.
+5. Numbers: Use odd numbers 3,5,7,11. They get 20% more clicks.
+6. Curiosity: End with... or? to create open loop.
+7. Add ${year} at end for freshness boost.
+8. NO clickbait lies. Must deliver in video.
+9. NO brackets [] or pipes |. YouTube 2026 demotes these.
+
+Example format: 7 Shocking ${keyword} Secrets That Went Viral in ${year}...
+
+Output ONLY 5 numbered titles. No explanation.`;
+
+}else if(type==='hashtags'){
+prompt=`You are Instagram + YouTube Hashtag Algorithm Expert 2026. Generate 18 TRENDING hashtags for "${keyword}".
+
+2026 HASHTAG STRATEGY:
+1. Mix: 3 Mega 10M+, 5 Large 1M-10M, 5 Medium 100K-1M, 5 Small 10K-100K.
+2. 2026 Rule: No #love #instagood #follow. Algorithm marks as spam.
+3. Format: All lowercase, no spaces. #${keyword.replace(/\s+/g,'').toLowerCase()}
+4. Add year tags: #${keyword.replace(/\s+/g,'').toLowerCase()}${year}, #viral${year}
+5. Add niche tags: #${keyword.replace(/\s+/g,'').toLowerCase()}tips, #${keyword.replace(/\s+/g,'').toLowerCase()}challenge
+6. Research: Use tags that are trending TODAY for "${keyword}".
+7. NO explanations. NO categories. ONLY hashtags.
+
+Output: 18 hashtags separated by single space.`;
+
+}else if(type==='caption'){
+prompt=`You are Instagram Reels + YouTube Shorts Expert 2026. Write 3 VIRAL captions for "${keyword}".
+
+2026 VIRAL CAPTION FORMULA:
+1. Hook Line: First 8 words decide if user stops scrolling. Use pattern: "POV: You finally found..."
+2. Length: 90-110 words per caption. Algorithm 2026 pushes this.
+3. Keyword "${keyword}" exactly 3 times per caption.
+4. Structure: Hook > Relatable Story > Value > Question CTA > Hashtags.
+5. Emojis: Exactly 3 per caption. Place after hook, middle, CTA.
+6. CTA Question: Must end with question to boost comments. Example: "Which tip will you try first?"
+7. Hashtags: 5 hashtags at end. Format #${keyword.replace(/\s+/g,'')} #viral${year}
+8. NO "Link in bio". NO "DM me". 2026 algorithm reduces reach.
+9. Separate each caption with ---
+
+Output ONLY 3 captions with --- separator.`;
+
+}
 
 try{
 const res=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`,{
@@ -138,14 +209,33 @@ method:'POST',
 headers:{'Content-Type':'application/json'},
 body:JSON.stringify({
 contents:[{parts:[{text:prompt}]}],
-generationConfig:{temperature:0.9,maxOutputTokens:800}
+generationConfig:{
+temperature:0.3,
+topP:0.7,
+topK:30,
+maxOutputTokens:1200
+}
 })
 });
 const data=await res.json();
 if(data.candidates&&data.candidates[0]){
 resultContent.textContent=data.candidates[0].content.parts[0].text;
 }else{
-resultContent.innerHTML='<div class="error">Failed to generate. Check API key.</div>';
+resultContent.innerHTML='<div class="error">API Error: Check your Gemini key or quota.</div>';
 }
 }catch(err){
-resultContent.innerHTML
+resultContent.innerHTML='<div class="error">Network Error: Key galat hai ya internet issue.</div>';
+}
+}
+
+function copyResult(){
+const text=resultContent.textContent;
+navigator.clipboard.writeText(text).then(()=>{
+const btn=document.querySelector('.copy-btn');
+btn.innerHTML='<i class="fas fa-check"></i> Copied!';
+setTimeout(()=>{btn.innerHTML='<i class="fas fa-copy"></i> Copy';},2000);
+});
+}
+</script>
+</body>
+</html>
